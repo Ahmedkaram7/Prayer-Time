@@ -26,16 +26,16 @@ async function times(city) {
   maghrib.innerText = data.data.timings.Maghrib;
   isha.innerText = data.data.timings.Isha;
   asr.innerText = data.data.timings.Asr;
-  timezone.innerText = `timezone: ${data.data.meta.timezone}`;
 }
 
 times("Cairo");
-
+timezone.innerText = `timezone: Cairo`;
 changeCity.addEventListener("click", () => {
   if (input.value === "") {
     alert("Enter City");
   } else {
     times(input.value);
+    timezone.innerText = `timezone: ${input.value}`;
   }
   input.value = "";
 });
